@@ -52,7 +52,12 @@ async def main(port: int, addr: str, max_packets: int, log_file: Path = None):
             if i % 5 == 0:
                 pass
                 # print(f"{i} total messages received")
-            print(data)
+
+            f = open("write_to.txt", "a")
+            f.write(data)
+            f.write("\n")
+            f.flush()
+            print( data)
 
 
 def cli():
